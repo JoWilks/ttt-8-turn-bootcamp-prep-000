@@ -11,11 +11,10 @@ def turn(board)
   input = gets.chomp
   index = input_to_index(input)
   if valid_move?(board, index)
-    turn(board)
-    break
+      move(board,index)
+      return display_board(board)
   end
-  move(board,index)
-  return display_board(board)
+  turn(board)
 end
 
 def input_to_index(input)
